@@ -39,6 +39,12 @@ body, .page-section, .header, .header-menu, .sqs-block-content, .sqs-html-conten
 .header-nav-item a:hover, .header-nav-item--active a, .header-menu-nav-item a:hover { color: var(--vl-ink) !important; background-image: none !important; }
 .header-burger-btn .top-bun, .header-burger-btn .patty, .header-burger-btn .bottom-bun { background-color: var(--vl-ink) !important; }
 .sqs-block-code .sqs-block-content { overflow: visible; }
+/* logo in front of the site title */
+.header-title-text a { display: inline-flex !important; align-items: center; gap: 12px; }
+.header-title-text a::before {
+  content: ""; flex: none; width: 46px; height: 46px;
+  background: url("https://play.vaynslibrary.com/media/logo-160.webp") center / contain no-repeat;
+}
 
 /* ---------- base ---------- */
 .vl { font: 17px/1.65 var(--vl-text); color: var(--vl-ink); -webkit-font-smoothing: antialiased; }
@@ -87,6 +93,13 @@ body, .page-section, .header, .header-menu, .sqs-block-content, .sqs-html-conten
 .vl-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--vl-line); background: var(--vl-surface); font: 500 13px/1 var(--vl-ui); color: var(--vl-muted); }
 .vl-badge i { width: 8px; height: 8px; border-radius: 50%; background: #3ddc84; font-style: normal; }
 .vl-badge.soon i { background: #f2a93b; }
+
+/* hero with the logo on the right */
+.vl-hero-logo { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.vl-hero-logo::before { --g1: rgba(233,196,106,.13); --g2: color-mix(in srgb, var(--vl-accent) 14%, transparent);
+  background: radial-gradient(26% 44% at 78% 50%, var(--g1), transparent 100%), radial-gradient(18% 30% at 62% 64%, var(--g2), transparent 100%); }
+.vl-logo { display: block; width: 100%; height: auto; max-width: 440px; justify-self: center; filter: drop-shadow(0 28px 50px rgba(0,0,0,.55)); }
+.vl-name .vl-logo { max-width: 340px; }
 
 /* ---------- cards ---------- */
 .vl-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
@@ -161,6 +174,9 @@ footer.sections .page-section, footer .footer-sections { border-top: 1px solid v
 @media (max-width: 900px) {
   .vl-split, .vl-split.flip { grid-template-columns: minmax(0, 1fr); }
   .vl-split.flip > :first-child { order: 0; }
+  .vl-hero-logo { grid-template-columns: minmax(0, 1fr); }
+  .vl-hero-logo .vl-logo { order: -1; max-width: 240px; justify-self: start; }
+  .vl-name .vl-logo { max-width: 240px; justify-self: start; }
   .vl-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 520px) {
