@@ -7,7 +7,9 @@
     if (el.getAttribute("data-vl-loaded")) return;
     el.setAttribute("data-vl-loaded", "1");
     var name = el.getAttribute("data-vl-page");
-    fetch(BASE + encodeURIComponent(name) + ".html", { cache: "no-cache" })
+    // the minute stamp skips GitHub's 10-minute CDN cache, so edits show up within a minute
+    var stamp = Math.floor(Date.now() / 60000);
+    fetch(BASE + encodeURIComponent(name) + ".html?v=" + stamp, { cache: "no-cache" })
       .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
       .then(function (html) { el.innerHTML = html; })
       .catch(function () {
