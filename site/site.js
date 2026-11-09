@@ -1,4 +1,4 @@
-/* Vayn's Library — fills Squarespace Code Blocks with page content hosted on GitHub.
+/* Vayns Library — fills Squarespace Code Blocks with page content hosted on GitHub.
    A Code Block contains just:  <div data-vl-page="home"></div>
    and this script loads site/pages/home.html into it. Edit the pages in the repo, push, done. */
 (function () {
