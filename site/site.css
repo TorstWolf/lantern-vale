@@ -175,7 +175,10 @@ body, .page-section, .header, .header-menu, .sqs-block-content, .sqs-html-conten
 .vl-emblems img { width: 42px; height: 42px; object-fit: contain; }
 
 /* ---------- footer ---------- */
-.vl-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 36px 0 12px; font-size: 15px; }
+.vl-footer { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 22px 40px; padding: 36px 0 12px; font-size: 15px; }
+.vl-footer .brand { grid-column: 1; grid-row: 1; }
+.vl-footer nav { grid-column: 1; grid-row: 2; }
+.vl-footer .side { grid-column: 2; grid-row: 1 / span 2; }
 .vl-footer .brand { display: flex; flex-direction: column; gap: 4px; }
 .vl-footer .brand strong { font: 700 15px/1.2 var(--vl-ui); letter-spacing: .12em; text-transform: uppercase; }
 .vl-footer .brand span { color: var(--vl-muted); font-size: 14px; }
@@ -190,7 +193,7 @@ body, .page-section, .header, .header-menu, .sqs-block-content, .sqs-html-conten
 .vl-footer .social a { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; color: var(--vl-muted) !important; border: 1px solid var(--vl-line); background: var(--vl-surface); transition: color .15s ease, border-color .15s ease, transform .15s ease; }
 .vl-footer .social a:hover { color: var(--c) !important; border-color: var(--c); transform: translateY(-2px); text-decoration: none; }
 .vl-footer .social svg { width: 15px; height: 15px; fill: currentColor; }
-@media (max-width: 900px) { .vl-footer .side { align-items: flex-start; } }
+@media (max-width: 900px) { .vl-footer { grid-template-columns: minmax(0, 1fr); } .vl-footer .side { grid-column: 1; grid-row: 3; align-items: flex-start; } }
 footer.sections .page-section, footer .footer-sections { border-top: 1px solid var(--vl-line); }
 
 /* ---------- responsive ---------- */
