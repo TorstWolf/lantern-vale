@@ -146,6 +146,17 @@ body, .page-section, .header, .header-menu, .sqs-block-content, .sqs-html-conten
 .vl-emblems a:hover { transform: translateY(-3px); border-color: var(--vl-accent); }
 .vl-emblems img { width: 42px; height: 42px; object-fit: contain; }
 
+/* ---------- footer ---------- */
+.vl-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 36px 0 12px; font-size: 15px; }
+.vl-footer .brand { display: flex; flex-direction: column; gap: 4px; }
+.vl-footer .brand strong { font: 700 15px/1.2 var(--vl-ui); letter-spacing: .12em; text-transform: uppercase; }
+.vl-footer .brand span { color: var(--vl-muted); font-size: 14px; }
+.vl-footer nav { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.vl-footer nav a { color: var(--vl-muted) !important; font: 500 14px var(--vl-ui); }
+.vl-footer nav a:hover { color: var(--vl-ink) !important; text-decoration: none; }
+.vl-footer .mail { font: 600 15px var(--vl-ui); }
+footer.sections .page-section, footer .footer-sections { border-top: 1px solid var(--vl-line); }
+
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
   .vl-split, .vl-split.flip { grid-template-columns: minmax(0, 1fr); }
