@@ -1,0 +1,161 @@
+/* =====================================================================
+   Vayn's Library — shared site styles for the Squarespace pages.
+   Loaded via Squarespace › Settings › Developer Tools › Code Injection (Header).
+   Page content lives in Code Blocks wrapped in <div class="vl">…</div>.
+   ===================================================================== */
+:root {
+  --vl-bg: #0b0d12;
+  --vl-surface: #12151c;
+  --vl-surface-2: #181c25;
+  --vl-line: #232836;
+  --vl-ink: #e8ebf1;
+  --vl-muted: #8b94a7;
+  --vl-accent: #7c9cff;
+  --vl-accent-2: #b18cff;
+  --vl-lantern: #e9c46a;
+  --vl-red: #ff4d57;
+  --vl-text: "Inter", system-ui, sans-serif;
+  --vl-ui: "Space Grotesk", "Inter", sans-serif;
+}
+
+/* ---------- Squarespace chrome: dark, clean ---------- */
+html, body, #siteWrapper, .page-section, .page-section .section-background, .sections, .footer-sections,
+.header, .header .header-announcement-bar-wrapper, .header-background-solid, .header-menu, .header-menu-bg {
+  background-color: var(--vl-bg) !important;
+}
+body, .page-section, .header, .header-menu, .sqs-block-content, .sqs-html-content {
+  color: var(--vl-ink) !important;
+  font-family: var(--vl-text) !important;
+}
+.header { border-bottom: 1px solid var(--vl-line) !important; }
+.header-title-text a, .header-title-text {
+  font-family: var(--vl-ui) !important; font-weight: 700 !important; letter-spacing: .12em !important;
+  text-transform: uppercase !important; font-size: 16px !important; color: var(--vl-ink) !important;
+}
+.header-nav-item a, .header-menu-nav-item a, .header-nav-folder-title {
+  font-family: var(--vl-ui) !important; font-weight: 500 !important; font-size: 15px !important;
+  color: var(--vl-muted) !important; letter-spacing: .01em !important;
+}
+.header-nav-item a:hover, .header-nav-item--active a, .header-menu-nav-item a:hover { color: var(--vl-ink) !important; background-image: none !important; }
+.header-burger-btn .top-bun, .header-burger-btn .patty, .header-burger-btn .bottom-bun { background-color: var(--vl-ink) !important; }
+.sqs-block-code .sqs-block-content { overflow: visible; }
+
+/* ---------- base ---------- */
+.vl { font: 17px/1.65 var(--vl-text); color: var(--vl-ink); -webkit-font-smoothing: antialiased; }
+.vl *, .vl *::before, .vl *::after { box-sizing: border-box; }
+.vl a { color: var(--vl-accent); text-decoration: none; }
+.vl a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.vl h1, .vl h2, .vl h3 { font-family: var(--vl-ui); color: var(--vl-ink); letter-spacing: -.02em; margin: 0; text-wrap: balance; }
+.vl h1 { font-size: clamp(38px, 6.4vw, 76px); line-height: 1.02; font-weight: 700; }
+.vl h2 { font-size: clamp(28px, 3.6vw, 42px); line-height: 1.1; font-weight: 700; }
+.vl h3 { font-size: 21px; line-height: 1.25; font-weight: 700; }
+.vl p { margin: 0 0 1em; }
+.vl img { display: block; max-width: 100%; }
+
+.vl-eyebrow { font: 600 13px/1 var(--vl-ui) !important; letter-spacing: .18em; text-transform: uppercase; color: var(--vl-accent); margin: 0 0 18px !important; }
+.vl-eyebrow.lantern { color: var(--vl-lantern); }
+.vl-lead { font-size: clamp(18px, 1.6vw, 21px); color: color-mix(in srgb, var(--vl-ink) 82%, var(--vl-muted)); max-width: 60ch; margin-top: 22px !important; }
+.vl-muted { color: var(--vl-muted); }
+.vl-section { padding: clamp(56px, 8vw, 104px) 0; }
+.vl-section + .vl-section { border-top: 1px solid var(--vl-line); }
+.vl-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px 32px; margin-bottom: 36px; }
+.vl-head p { margin: 10px 0 0; color: var(--vl-muted); max-width: 56ch; }
+
+/* ---------- buttons ---------- */
+.vl-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.vl-btn {
+  display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 22px; border-radius: 12px;
+  font: 600 15px/1 var(--vl-ui); color: var(--vl-ink) !important; border: 1px solid var(--vl-line); background: var(--vl-surface);
+  transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+.vl-btn:hover { text-decoration: none !important; transform: translateY(-2px); border-color: var(--vl-accent); }
+.vl-btn.primary { background: linear-gradient(135deg, var(--vl-accent), var(--vl-accent-2)); border-color: transparent; color: #0b0d12 !important; }
+.vl-btn.lantern { background: var(--vl-lantern); border-color: transparent; color: #1b1608 !important; }
+.vl-btn small { font: 500 12px var(--vl-text); opacity: .7; }
+
+/* ---------- hero ---------- */
+.vl-hero { position: relative; padding: clamp(64px, 11vw, 150px) 0 clamp(56px, 8vw, 110px); overflow: hidden; }
+.vl-hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  --g1: color-mix(in srgb, var(--vl-accent) 20%, transparent); --g2: color-mix(in srgb, var(--vl-accent-2) 16%, transparent);
+  background: radial-gradient(30% 46% at 66% 42%, var(--g1), transparent 100%),
+              radial-gradient(16% 30% at 82% 58%, var(--g2), transparent 100%);
+}
+.vl-hero > * { position: relative; z-index: 1; }
+.vl-hero.lantern::before { --g1: rgba(233,196,106,.16); --g2: rgba(70,140,110,.16); }
+.vl-hero.hub::before { --g1: rgba(255,77,87,.16); --g2: rgba(255,160,60,.12); }
+.vl-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--vl-line); background: var(--vl-surface); font: 500 13px/1 var(--vl-ui); color: var(--vl-muted); }
+.vl-badge i { width: 8px; height: 8px; border-radius: 50%; background: #3ddc84; font-style: normal; }
+.vl-badge.soon i { background: #f2a93b; }
+
+/* ---------- cards ---------- */
+.vl-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.vl-card {
+  position: relative; display: flex; flex-direction: column; overflow: hidden; border-radius: 18px;
+  background: var(--vl-surface); border: 1px solid var(--vl-line); color: var(--vl-ink) !important;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.vl-card:hover { text-decoration: none !important; transform: translateY(-4px); border-color: var(--c, var(--vl-accent)); }
+.vl-card .media { aspect-ratio: 16 / 10; overflow: hidden; background: var(--vl-surface-2); position: relative; }
+.vl-card .media img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .5s ease; }
+.vl-card:hover .media img { transform: scale(1.04); }
+.vl-card .body { padding: 22px 24px 26px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.vl-card .kind { font: 600 12px/1 var(--vl-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--c, var(--vl-accent)); }
+.vl-card p { margin: 0; color: var(--vl-muted); font-size: 15px; line-height: 1.55; }
+.vl-card .more { margin-top: auto; padding-top: 14px; font: 600 14px var(--vl-ui); color: var(--c, var(--vl-accent)); }
+
+/* phone collage used on Lantern Vale cards & hero */
+.vl-phones { display: flex; justify-content: center; align-items: center; gap: 4%; height: 100%; padding: 6% 6% 0; background: radial-gradient(80% 90% at 50% 100%, rgba(233,196,106,.18), transparent), #10161b; }
+.vl-phones img { width: 30%; height: auto !important; object-fit: contain !important; border-radius: 10px; border: 1px solid rgba(255,255,255,.08); box-shadow: 0 18px 40px rgba(0,0,0,.5); }
+.vl-phones img:nth-child(2) { transform: translateY(-6%); }
+.vl-card .media .vl-phones img { width: 30%; height: auto; object-fit: contain; }
+.vl-card:hover .media .vl-phones img { transform: none; }
+.vl-card:hover .media .vl-phones img:nth-child(2) { transform: translateY(-9%); }
+.vl-shots { max-width: 1040px; margin: 0 auto; }
+
+/* ---------- feature split ---------- */
+.vl-split { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+.vl-split.flip > :first-child { order: 2; }
+.vl-frame { border-radius: 18px; overflow: hidden; border: 1px solid var(--vl-line); background: var(--vl-surface); box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+
+.vl-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 8px; }
+.vl-feature { padding: 22px; border-radius: 16px; background: var(--vl-surface); border: 1px solid var(--vl-line); }
+.vl-feature .ico { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 14px; font-size: 20px; background: color-mix(in srgb, var(--c, var(--vl-accent)) 16%, transparent); color: var(--c, var(--vl-accent)); }
+.vl-feature h3 { font-size: 17px; margin-bottom: 6px; }
+.vl-feature p { margin: 0; font-size: 15px; color: var(--vl-muted); line-height: 1.55; }
+
+/* screenshot strip */
+.vl-shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.vl-shots figure { margin: 0; }
+.vl-shots img { width: 100%; border-radius: 14px; border: 1px solid var(--vl-line); }
+.vl-shots figcaption { margin-top: 10px; font: 500 13px var(--vl-ui); color: var(--vl-muted); text-align: center; }
+
+/* steps */
+.vl-steps { counter-reset: s; display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.vl-steps li { counter-increment: s; position: relative; padding: 16px 18px 16px 58px; border-radius: 14px; background: var(--vl-surface); border: 1px solid var(--vl-line); color: var(--vl-muted); font-size: 15px; }
+.vl-steps li::before { content: counter(s); position: absolute; left: 16px; top: 14px; width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; font: 700 14px var(--vl-ui); color: #1b1608; background: var(--vl-lantern); }
+.vl-steps strong { color: var(--vl-ink); font-weight: 600; }
+
+/* ---------- universe teaser ---------- */
+.vl-universe { position: relative; border-radius: 24px; overflow: hidden; border: 1px solid var(--vl-line); background: #0d1018; }
+.vl-universe .bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .35; }
+.vl-universe::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,13,18,.96) 0%, rgba(11,13,18,.82) 45%, rgba(11,13,18,.35) 100%); }
+.vl-universe .inner { position: relative; z-index: 1; padding: clamp(32px, 6vw, 72px); max-width: 720px; }
+.vl-emblems { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.vl-emblems a { width: 58px; height: 58px; border-radius: 14px; display: grid; place-items: center; background: rgba(255,255,255,.04); border: 1px solid var(--vl-line); transition: transform .15s ease, border-color .15s ease; }
+.vl-emblems a:hover { transform: translateY(-3px); border-color: var(--vl-accent); }
+.vl-emblems img { width: 42px; height: 42px; object-fit: contain; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .vl-split, .vl-split.flip { grid-template-columns: minmax(0, 1fr); }
+  .vl-split.flip > :first-child { order: 0; }
+  .vl-shots { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 520px) {
+  .vl { font-size: 16px; }
+  .vl-cards { grid-template-columns: minmax(0, 1fr); }
+  .vl-btn { width: 100%; justify-content: center; }
+  .vl-emblems a { width: 50px; height: 50px; }
+  .vl-emblems img { width: 36px; height: 36px; }
+}
