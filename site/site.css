@@ -183,6 +183,14 @@ body, .page-section, .header, .header-menu, .sqs-block-content, .sqs-html-conten
 .vl-footer nav a { color: var(--vl-muted) !important; font: 500 14px var(--vl-ui); }
 .vl-footer nav a:hover { color: var(--vl-ink) !important; text-decoration: none; }
 .vl-footer .mail { font: 600 15px var(--vl-ui); }
+.vl-footer .side { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.vl-footer .social { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.vl-footer .social .lbl { font: 600 11px/1 var(--vl-ui); letter-spacing: .14em; text-transform: uppercase; color: var(--vl-muted); margin-right: 4px; }
+.vl-footer .social .lbl ~ .lbl { margin-left: 14px; }
+.vl-footer .social a { width: 32px; height: 32px; border-radius: 9px; display: grid; place-items: center; color: var(--vl-muted) !important; border: 1px solid var(--vl-line); background: var(--vl-surface); transition: color .15s ease, border-color .15s ease, transform .15s ease; }
+.vl-footer .social a:hover { color: var(--c) !important; border-color: var(--c); transform: translateY(-2px); text-decoration: none; }
+.vl-footer .social svg { width: 15px; height: 15px; fill: currentColor; }
+@media (max-width: 900px) { .vl-footer .side { align-items: flex-start; } }
 footer.sections .page-section, footer .footer-sections { border-top: 1px solid var(--vl-line); }
 
 /* ---------- responsive ---------- */
