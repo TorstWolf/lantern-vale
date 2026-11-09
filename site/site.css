@@ -137,6 +137,21 @@ body, .page-section, .header, .header-menu, .sqs-block-content, .sqs-html-conten
 .vl-feature h3 { font-size: 17px; margin-bottom: 6px; }
 .vl-feature p { margin: 0; font-size: 15px; color: var(--vl-muted); line-height: 1.55; }
 
+/* social links (About page) */
+.vl-socials { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 16px; margin-top: 28px; }
+.vl-social-group { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: 16px; background: var(--vl-surface); border: 1px solid var(--vl-line); }
+.vl-social-group h3 { font-size: 17px; }
+.vl-social-group > p { margin: 0 0 6px; font-size: 15px; color: var(--vl-muted); line-height: 1.55; }
+.vl-social { display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 12px; border: 1px solid var(--vl-line); background: var(--vl-surface-2); color: var(--vl-ink) !important; transition: transform .15s ease, border-color .15s ease; }
+.vl-social:hover { text-decoration: none !important; transform: translateY(-2px); border-color: var(--c, var(--vl-accent)); }
+.vl-social .ico { flex: none; width: 36px; height: 36px; border-radius: 9px; display: grid; place-items: center; background: color-mix(in srgb, var(--c, var(--vl-accent)) 14%, transparent); color: var(--c, var(--vl-accent)); }
+.vl-social svg { width: 18px; height: 18px; fill: currentColor; }
+.vl-social .txt { flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.3; }
+.vl-social strong { font: 600 15px var(--vl-ui); }
+.vl-social small { font-size: 13px; color: var(--vl-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vl-social .go { color: var(--vl-muted); transition: color .15s ease; }
+.vl-social:hover .go { color: var(--c, var(--vl-accent)); }
+
 /* screenshot strip */
 .vl-shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .vl-shots figure { margin: 0; }
